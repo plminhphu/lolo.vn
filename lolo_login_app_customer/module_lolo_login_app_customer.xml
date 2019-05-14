@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_lolo_login_app_customer" default="compile.module.lolo_login_app_customer">
+  <dirname property="module.lolo_login_app_customer.basedir" file="${ant.file.module_lolo_login_app_customer}"/>
+  
+  <property name="module.jdk.home.lolo_login_app_customer" value=""/>
+  <property name="module.jdk.bin.lolo_login_app_customer" value=""/>
+  <property name="module.jdk.classpath.lolo_login_app_customer" value=""/>
+  
+  <property name="compiler.args.lolo_login_app_customer" value="-encoding UTF-8 -source 12 -target 12 ${compiler.args}"/>
+  
+  <property name="lolo_login_app_customer.output.dir" value="${module.lolo_login_app_customer.basedir}/out/production/lolo_login_app_customer"/>
+  <property name="lolo_login_app_customer.testoutput.dir" value="${module.lolo_login_app_customer.basedir}/out/test/lolo_login_app_customer"/>
+  
+  <path id="lolo_login_app_customer.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="lolo_login_app_customer.module.production.classpath">
+    <path refid="library.dart_sdk.classpath"/>
+    <path refid="library.dart_packages.classpath"/>
+  </path>
+  
+  <path id="lolo_login_app_customer.runtime.production.module.classpath">
+    <pathelement location="${lolo_login_app_customer.output.dir}"/>
+    <path refid="library.dart_sdk.classpath"/>
+    <path refid="library.dart_packages.classpath"/>
+  </path>
+  
+  <path id="lolo_login_app_customer.module.classpath">
+    <pathelement location="${lolo_login_app_customer.output.dir}"/>
+    <path refid="library.dart_sdk.classpath"/>
+    <path refid="library.dart_packages.classpath"/>
+  </path>
+  
+  <path id="lolo_login_app_customer.runtime.module.classpath">
+    <pathelement location="${lolo_login_app_customer.testoutput.dir}"/>
+    <pathelement location="${lolo_login_app_customer.output.dir}"/>
+    <path refid="library.dart_sdk.classpath"/>
+    <path refid="library.dart_packages.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.lolo_login_app_customer">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.lolo_login_app_customer">
+    <patternset refid="excluded.from.module.lolo_login_app_customer"/>
+  </patternset>
+  
+  
+  <target name="compile.module.lolo_login_app_customer" depends="compile.module.lolo_login_app_customer.production,compile.module.lolo_login_app_customer.tests" description="Compile module lolo_login_app_customer"/>
+  
+  <target name="compile.module.lolo_login_app_customer.production" depends="register.custom.compilers" description="Compile module lolo_login_app_customer; production classes"/>
+  
+  <target name="compile.module.lolo_login_app_customer.tests" depends="register.custom.compilers,compile.module.lolo_login_app_customer.production" description="compile module lolo_login_app_customer; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.lolo_login_app_customer" description="cleanup module">
+    <delete dir="${lolo_login_app_customer.output.dir}"/>
+    <delete dir="${lolo_login_app_customer.testoutput.dir}"/>
+  </target>
+</project>
