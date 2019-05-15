@@ -19,7 +19,7 @@ class HeadPhone extends StatelessWidget{
             color: colorText,
             fontSize: sizeFontSizeHeadPhone,
           ),
-          items: <String>['Viet Nam', 'Hoa Ky', 'Anh', 'Phap', 'Han Quoc', 'Nhat Ban']
+          items: <String>['Viet Nam', 'Hoa Ky', 'Anh', 'Phap']
               .map<DropdownMenuItem<String>>((String value) {
             return DropdownMenuItem<String>(
               value: value,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:lolo_login_app_customer/UI/slide/slide_right_route.dart';
 import 'package:lolo_login_app_customer/UI/screen/login/phone_verifi.dart';
 import 'package:lolo_login_app_customer/UI/util/color.dart';
@@ -124,6 +125,7 @@ class MainWidget extends StatelessWidget {
   _onCheckPhoneNumber(context){
     int phone = int.tryParse(_textfieldPhoneNumber.text.toString());
     if(phone > 100000000 && phone < 999999999){
+
       Navigator.push(
           context,
           SliderRightRoute(page: PhoneVerifiScreen())
