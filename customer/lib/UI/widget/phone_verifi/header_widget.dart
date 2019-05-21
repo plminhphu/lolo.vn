@@ -13,20 +13,20 @@ class HeaderWidget extends StatelessWidget {
     return Container(
       alignment: Alignment.topLeft,
       color: colorBackground,
-      margin: EdgeInsets.all(sizeMarginBox),
-      padding: EdgeInsets.all(sizePaddingBox),
+      margin: EdgeInsets.only(top: sizeMarginBox),
+      padding: EdgeInsets.only(left: sizePaddingBox, top: sizePaddingBox),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
+          BackButton(
+            color: colorBackgroundWhite,
+          ),
           Text(
             stringTitlePhoneVerifi,
             style: TextStyle(
               fontSize: sizeFontSizeTitle,
               color: colorTextWhite,
             ),
-          ),
-          SizedBox(
-            height: sizeBoxLine,
           ),
           Text(
             stringSpanOTPInput,

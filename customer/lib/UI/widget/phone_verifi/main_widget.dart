@@ -77,40 +77,12 @@ class MainWidget extends StatelessWidget {
     FirebaseAuth.instance.currentUser().then((user) {
       if (user != null) {
         Navigator.of(context).pop();
-        Navigator.of(context).pushReplacementNamed('/home');
+        Navigator.of(context).pushReplacementNamed('/login');
       } else {
-//        Toast.show(_txtCodeOTP.text, context);
-//        Navigator.of(context).pop();
         signIn(context);
-        Navigator.of(context).pop();
-        Navigator.of(context).pushReplacementNamed('/home');
       }
     });
   }
-//  Future<bool> smsCodeDialog(BuildContext context) {
-//    return showDialog(
-//        context: context,
-//        barrierDismissible: false,
-//        builder: (BuildContext context) {
-//          return new AlertDialog(
-//            title: Text('Enter sms Code'),
-//            content: TextField(
-//              onChanged: (value) {
-//                this.smsCode = value;
-//              },
-//            ),
-//            contentPadding: EdgeInsets.all(10.0),
-//            actions: <Widget>[
-//              new FlatButton(
-//                child: Text('Xác nhận'),
-//                onPressed: () {
-//
-//                },
-//              )
-//            ],
-//          );
-//        });
-//  }
 
   signIn(context) {
     FirebaseAuth.instance.signInWithPhoneNumber(verificationId: verificationId, smsCode: _txtCodeOTP.text).then((user) {

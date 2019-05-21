@@ -15,6 +15,7 @@ class HeaderWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      alignment: Alignment.topLeft,
       child: Column(
         children: <Widget>[
           SizedBox(
@@ -31,6 +32,7 @@ class HeaderWidget extends StatelessWidget {
           ),
           IconButton(
             tooltip: stringExit,
+            color: colorBackground,
             onPressed: (){
               _Logout(context);
             },

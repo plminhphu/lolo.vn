@@ -112,6 +112,7 @@ class MainWidget extends StatelessWidget {
                   ),
                 ),
                 IconButton(
+                  tooltip: stringClear,
                   onPressed: (){
                     _onClearPhoneNumber();
                   },

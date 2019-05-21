@@ -10,3 +10,4 @@ String stringTitleHomeScreen = "Home Screen";
 String stringLogout = "Logout";
 String stringProfile = "Profile";
 String stringExit = "Exit";
+String stringClear = "Clear";
