@@ -6,6 +6,7 @@ import 'package:lolo_login_app_customer/UI/util/size.dart';
 import 'package:lolo_login_app_customer/UI/util/string.dart';
 import 'package:lolo_login_app_customer/UI/util/icon.dart';
 import 'package:lolo_login_app_customer/UI/widget/dropdown/headphone.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class MainWidget extends StatelessWidget {
 
@@ -124,10 +125,18 @@ class MainWidget extends StatelessWidget {
   _onCheckPhoneNumber(context){
     int phone = int.tryParse(_textfieldPhoneNumber.text.toString());
     if(phone > 100000000 && phone < 999999999){
+      signin("phamleminhphu123@gmail.com","123456");
       Navigator.push(
           context,
           SliderRightRoute(page: PhoneVerifiScreen())
       );
+    }
+  }
+  Future<void> signin(email, password) async {
+    try{
+      FirebaseUser user = await FirebaseAuth.instance.signInWithEmailAndPassword(email: email, password: password);
+    }catch(e){
+      print(e.toString());
     }
   }
 }
