@@ -8,3 +8,5 @@ String stringVeri = "Veri";
 String stringPhoneERR = "Not fond your phone number";
 String stringTitleHomeScreen = "Home Screen";
 String stringLogout = "Logout";
+String stringProfile = "Profile";
+String stringExit = "Exit";

@@ -17,8 +17,8 @@ class HomeScreen extends StatelessWidget{
       backgroundColor: colorBackground,
       body: Stack(
         children: <Widget>[
-          HeaderWidget(),
           MainWidget(),
+          HeaderWidget(),
         ],
       )
     );

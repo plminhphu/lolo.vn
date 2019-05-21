@@ -17,3 +17,5 @@ double sizeFontSizeButton = 20;
 
 double sizeFontSizeIputNumberPhone = 20;
 double sizeFontSizeIputCodeOTP = 40;
+
+double sizeButtonBig = 35;

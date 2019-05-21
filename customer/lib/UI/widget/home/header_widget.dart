@@ -1,10 +1,13 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:customer/UI/util/color.dart';
 import 'package:customer/UI/util/size.dart';
 import 'package:customer/UI/util/string.dart';
+import 'package:customer/UI/util/icon.dart';
 import 'package:customer/UI/slide/slide_right_route.dart';
 import 'package:customer/UI/screen/login/login_screen.dart';
+import 'package:flutter/rendering.dart';
 import 'package:toast/toast.dart';
 
 class HeaderWidget extends StatelessWidget {
@@ -12,10 +15,33 @@ class HeaderWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Text('546132145643253'),
+      child: Column(
+        children: <Widget>[
+          SizedBox(
+            height: sizeBoxLine,
+          ),
+          IconButton(
+            tooltip: stringProfile,
+            color: colorBackground,
+            onPressed: (){
+              _checkin(context);
+            },
+            iconSize: sizeButtonBig,
+            icon: iconPerson,
+          ),
+          IconButton(
+            tooltip: stringExit,
+            onPressed: (){
+              _Logout(context);
+            },
+            iconSize: sizeButtonBig,
+            icon: iconExit,
+          ),
+        ],
+      ),
     );
   }
-  _checkin(context){
+  _checkin(context) {
     FirebaseAuth firebaseAuth = FirebaseAuth.instance;
     firebaseAuth.currentUser().then((user){
       if(user.uid != null){
